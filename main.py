@@ -27,19 +27,6 @@ def index():
         return render_template("info.html", info = info)
 
 
-#Main method
-if __name__ == '__main__':
-    app.run(debug = True)
-
-        iname = info['item_name']
-        water = info['nf_water_grams']
-        calories = info['nf_calories']
-        calories_from_fat = info['nf_calories_from_fat']
-        total_fat = info['nf_total_fat']
-        # print(info)
-        
-        return render_template("infofood.html", iname=iname, water=water, calories=calories, calories_from_fat=calories_from_fat, total_fat=total_fat)
-
 
 @app.route("/exercise", methods = ['POST', 'GET'])
 def exercise():
