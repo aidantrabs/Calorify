@@ -12,19 +12,22 @@ app = Flask(__name__)
 
 @app.route("/", methods = ['POST', 'GET'])
 def index():
-
     if request.method == 'GET':
         return render_template("foods.html")
- 
     if request.method == 'POST':
         food = request.form.get("foods")
         results = nix.search(food, results="0:1").json()
         value = results['hits']
         temp = value[0]
         info = nix.item(id = temp['_id']).json()
-        
-        #print(info)
-        return render_template("info.html", info = info)
+        iname = info['item_name']
+        water = info['nf_water_grams']
+        calories = info['nf_calories']
+        calories_from_fat = info['nf_calories_from_fat']
+        total_fat = info['nf_total_fat']
+        # print(info)
+        return render_template("infofood.html", iname=iname, water=water, calories=calories, calories_from_fat=calories_from_fat, total_fat=total_fat)
+
 
 
 
@@ -54,6 +57,4 @@ def exercise():
         calories = temp2['nf_calories']
         inp = temp2['user_input']
         image = temp2['photo']['highres']
-        
-        # return render
         return render_template("info.html", calories = calories, inp = inp, image = image)
