@@ -69,4 +69,5 @@ def exercise():
         inp = temp2['user_input']
         image = temp2['photo']['highres']
         
+        # return render
         return render_template("info.html", calories = calories, inp = inp, image = image)
