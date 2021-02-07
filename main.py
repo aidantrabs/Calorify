@@ -38,10 +38,9 @@ def exercise():
         conn = http.client.HTTPSConnection("trackapi.nutritionix.com")
         exercise = request.form.get("exercise")
         payload = urlencode({'query': exercise})
-        headers = 
-        {
-            'x-app-id': 'c1955429',
-            'x-app-key': '4e8e629653b6d84fda5ad79b71b805f2',
+        headers = {
+            'x-app-id': keys_index[0],
+            'x-app-key': keys_index[1],
             'content': 'application/json',
             'Content-Type': 'application/x-www-form-urlencoded'
         }
