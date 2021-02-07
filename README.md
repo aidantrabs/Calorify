@@ -3,7 +3,7 @@
 
 
 <h2 align="center">
-  <a href=""><img src="https://ibb.co/fqyYSPW" width="250"/></a>
+  <a href=""><img src="https://i.ibb.co/XjKZ4vP/calorify.png" width="250"/></a>
     <br>
     <br>
   Helping people improve their diet, exercise and calorie consumption.
